@@ -1,6 +1,9 @@
+/* need to pick our colorscheme*/
+
 * {
     box-sizing: border-box;
     margin: 0;
+    /* width: 800px; */
     padding: 0;
   }
   
@@ -36,17 +39,45 @@
     color: #fff;
     text-decoration: none;
   }
+
+  nav ul li a:hover {
+    color: lightblue;
+    text-decoration: none;
+  }
+
+  /* figure out if the buttons should have class or not, or the style of buttons apply to everything (e.g. project-buttom)*/
+  button{
+    background-color:lightgray;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+
+  button:hover{
+    background-color:lightskyblue;
+    padding: 0.5rem;
+  }
   
   section {
-    max-width: 1000px;
+    max-width: 1100px; /*for the width of everything*/
     margin: 2rem auto;
     padding: 0 1rem;
+    background-color: coral;
+  }
+
+  /* to check the section */
+  section h2{
+    /* padding: 0.5rem; */
+    background-color: yellow;
   }
   
   #hero {
     background: #e0f7fa;
     padding: 4rem 1rem;
     text-align: center;
+  }
+
+  #hero img{
+    object-fit: cover;
   }
   
   .project-grid {
@@ -57,9 +88,15 @@
   
   .project-card {
     background: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
+    margin: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .project-card p{
+    padding:1rem;
   }
   
   footer {

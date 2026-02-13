@@ -1,58 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
+
+    <!-- navbar -->
     <nav>
-      <h1>Your Name</h1>
+      <h1>Samphasnearyroth Chau (Nero)</h1>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
+  <!-- Hero -->
   <section id="hero">
     <h2>Hello, This is Nero.</h2>
-    <p>I'm a computer science and mathematics freshman passionate about using tech for social good.</p>
+    <p>I'm a computer science and mathematics sophomore passionate about using tech for social good.</p>
+    <div class="profile"> <!--need to figure out how to fit image-->
+      <img src = "photo/neroprofile.jpg" alt="Nero's Profile Picture">
+    </div>
+  <!-- not sure about this button so acts as a placeholder for sth more creative-->
     <button onclick="scrollToSection('projects')">See My Work</button>
   </section>
 
+  <!-- about section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Write a short bio here. Include your background, interests, and goals.</p>
+    <!-- not sure if using <br> is a good idea, need to search more on how to make clean breaks -->
+    <p>I’m a Computer Science, Mathematics, and Data Science student passionate about building technology that empowers underserved communities.</p><br>
+    <p>I’ve worked across nonprofit and community initiatives, from digital literacy and STEM education to development and empowerment programs for women and children, including projects in Cambodia, Tanzania, and South Africa. These experiences drive my interest in designing technology that is ethical, inclusive, and grounded in real human needs.</p><br>
+    <p>My interests live at the intersection of AI/ML, data, sustainability, human-centered interaction, and inclusive design. I care deeply about how technology is built and who it serves, and I explore ways it can be designed thoughtfully to create real, lasting social impact. Through mentoring, research, and community-driven projects, I aim to build systems that are not just innovative but genuinely equitable.</p><br>
+    <p>I’m excited to keep learning and growing as a technologist and researcher, and I’m always looking to collaborate with people and organizations that value ethics, inclusion, and meaningful real-world impact.</p><br>
+    <!-- skill list for assignment but not gonna put it in real life -->
+    <h3>Skills:</h3>
+    <ul>
+      <li>Project management</li>
+      <li>Creativity</li>
+      <li>Problem solving</li>
+    </ul>
   </section>
 
+  <!-- project section -->
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="project-grid">
+
       <div class="project-card">
-        <h3>Project 1</h3>
-        <p>Description of the project.</p>
+        <h3>National Exam as a Measure of Student Success</h3>
+        <h5>Introduction of Data Science Course</h5>
+        <p>Analyzed Cambodian education data in R to evaluate whether national exam scores predict broader student success. Built a reproducible workflow with R Quarto, enabling transparent analysis and results validation.</p>
+        <!-- i want a button that brings the user to my github repo -->
+        <a href = "https://github.com/nerochau/r-final-project-dsci" target="_blank"><button>Source Code</button></a>
       </div>
+
       <div class="project-card">
-        <h3>Project 2</h3>
-        <p>Description of another project.</p>
+        <h3>Career-personality Matching</h3>
+        <h5>CariCon, Breakthrough Tech, Cornell Tech</h5>
+        <p>Developed ML models to predict job performance from personality traits; Logistic Regression achieved 64.5% test accuracy. Evaluated per-MBTI precision and recall, identifying class-imbalance–driven fairness and reliability trade-offs.</p>
+        <a href = "https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank"><button>Source Code</button></a>
       </div>
+
+      <div class="project-card">
+        <h3>Choosr</h3>
+        <h5>HackMIT</h5>
+        <p>Built a Chrome extension using JavaScript that helps users make smarter Amazon purchases by extracting product data, comparing alternatives, and providing cost-benefit recommendations in a clear visual interface.</p>
+        <a href = "https://github.com/nerochau/choosr" target="_blank"><button>Source Code</button></a>
+      </div>
+
     </div>
+
   </section>
 
+<!-- contact section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
+    <p>Email: cnearyroth@yahoo.com</p>
+    <p>LinkedIn: <a href="www.linkedin.com/in/samphasnearyrothchau">LinkedIn</a></p>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
+
+<!-- footer -->
+<footer>
+  <p>&copy;Copyright 2026 Nero chau</p>
+</footer>
+
 </html>
