@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Portfolio</title>
+  <title>Nero Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,92 +16,131 @@
 
     <!-- navbar -->
     <nav>
-      <h1>Samphasnearyroth Chau (Nero)</h1>
+      <h1>Nero</h1>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
   </header>
 
-  <!-- Hero -->
+  <!-- each section: should have similar padding, margin -->
+  <!-- hero section -->
   <section id="hero">
-    <img class="hero-pic" src="photo/neroprofile.jpg"
-        alt="Nero Profile Picture">
+    <div class="hero-text">
+      <h1 id="typing"></h1>
+      <p>Computer science + mathematics student exploring AI, data, and human-centered design.</p>
+    </div>
 
-    <h2>Hello, This is Nero.</h2>
-    <p>
-      I'm a computer science and mathematics sophomore passionate about using tech for social good.
-    </p>
-
-    <button onclick="scrollToSection('projects')">
-      See My Work
-    </button>
+    <img class="hero-pic" src="photo/neroprofile.jpg" alt="">
   </section>
 
   <!-- about section -->
   <section id="about">
-    <h2>About Me</h2>
-    <!-- not sure if using <br> is a good idea, need to search more on how to make clean breaks -->
-    <p>I’m a Computer Science, Mathematics, and Data Science student passionate about building technology that empowers underserved communities. I’ve worked across nonprofit and community initiatives, from digital literacy and STEM education to development and empowerment programs for women and children, including projects in Cambodia, Tanzania, and South Africa. These experiences drive my interest in designing technology that is ethical, inclusive, and grounded in real human needs.</p><br>
-    <p>My interests live at the intersection of AI/ML, data, sustainability, human-centered interaction, and inclusive design. I care deeply about how technology is built and who it serves, and I explore ways it can be designed thoughtfully to create real, lasting social impact. Through mentoring, research, and community-driven projects, I aim to build systems that are not just innovative but genuinely equitable. I’m excited to keep learning and growing as a technologist and researcher, and I’m always looking to collaborate with people and organizations that value ethics, inclusion, and meaningful real-world impact.</p><br>
-    <!-- skill list for assignment but not gonna put it in real life -->
+    <h2>About</h2>
+    <p>
+      I’m a Computer Science and Mathematics student passionate about building technology that empowers underserved communities. I’ve worked across nonprofit initiatives in Cambodia, Tanzania, and South Africa.
+    </p>
+    <p>
+      My interests lie at the intersection of AI, data, sustainability, and human-centered design. I aim to create systems that are thoughtful, ethical, and impactful.
+    </p>
+
     <h3>Skills:</h3>
     <ul>
-      <li>Project management</li>
+      <li>Python, AI/ML, WebDev</li>
       <li>Creativity</li>
       <li>Problem solving</li>
     </ul>
   </section>
 
   <!-- project section -->
-  <section id="projects">
+ <section id="projects">
     <h2>Projects</h2>
 
-    <div class="project-grid">
-
-      <div class="project-card">
-        <h3>National Exam as a Measure of Student Success</h3>
-        <h5>Introduction of Data Science Course</h5>
-        <p>Analyzed Cambodian education data in R to evaluate whether national exam scores predict broader student success. Built a reproducible workflow with R Quarto, enabling transparent analysis and results validation.</p>
-        <!-- i want a button that brings the user to my github repo -->
-        <a href = "https://github.com/nerochau/r-final-project-dsci" target="_blank"><button>Source Code</button></a>
-      </div>
-
-      <div class="project-card">
-        <h3>Career-personality Matching</h3>
-        <h5>CariCon, Breakthrough Tech, Cornell Tech</h5>
-        <p>Developed ML models to predict job performance from personality traits; Logistic Regression achieved 64.5% test accuracy. Evaluated per-MBTI precision and recall, identifying class-imbalance–driven fairness and reliability trade-offs.</p>
-        <a href = "https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank"><button>Source Code</button></a>
-      </div>
-
-      <div class="project-card">
-        <h3>Choosr</h3>
-        <h5>HackMIT</h5>
-        <p>Built a Chrome extension using JavaScript that helps users make smarter Amazon purchases by extracting product data, comparing alternatives, and providing cost-benefit recommendations in a clear visual interface.</p>
-        <a href = "https://github.com/nerochau/choosr" target="_blank"><button>Source Code</button></a>
-      </div>
-
+    <div class="filters">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('2026')">2026</button>
+        <button onclick="filterProjects('2025')">2025</button>
+        <button onclick="filterProjects('2024')">2024</button>
     </div>
 
+     <div class="project-grid">
+      <div class="project-card" data-year="2026">
+        <img src="photo/project1.jpg" alt="">
+        <h3>Granted</h3>
+        <p>Built an Agent AI in a langGraph framework to support efficiency in grant writing process for small businesses and nonprofits.</p>
+        <p class="tech">Python · LangGraph</p>
+        <a href="https://github.com/nerochau/r-final-project-dsci" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project-card" data-year="2025">
+        <img src="photo/project1.jpg" alt="">
+        <h3>National Exam Analysis</h3>
+        <p>Evaluated whether exam scores predict student success using R.</p>
+        <p class="tech">R · Data Analysis</p>
+        <a href="https://github.com/nerochau/r-final-project-dsci" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project-card" data-year="2025">
+        <img src="photo/project2.jpg" alt="">
+        <h3>Career Matching ML</h3>
+        <p>Predicted job performance using personality traits and ML models.</p>
+        <p class="tech">Python · ML</p>
+        <a href="https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project-card" data-year="2025">
+        <img src="photo/project3.jpg" alt="">
+        <h3>Choosr</h3>
+        <p>Chrome extension to compare products and improve purchasing decisions.</p>
+        <p class="tech">JavaScript · Chrome API</p>
+        <a href="https://github.com/nerochau/choosr" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+
+    <div class="hobby-grid">
+      <div>
+        <h3>YouTube</h3>
+        <p>Filming and editing visual stories.</p>
+        <a href="https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank">View videos →</a>
+      </div>
+
+      <div>
+        <h3>Entrepreneurship</h3>
+        <p>Building ideas into real-world projects.</p>
+      </div>
+
+      <div> 
+        <!-- add countries + pictures -->
+        <h3>Travel</h3>
+        <p>Exploring cultures and global perspectives.</p>
+      </div>
+    </div>
   </section>
 
 <!-- contact section -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: cnearyroth@yahoo.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/samphasnearyrothchau">Samphasnearyroth Chau</a></p>
-    <p>GitHub: <a href="https://github.com/nerochau">@nerochau</a></p>
+    <p><a href="https://www.linkedin.com/in/samphasnearyrothchau">LinkedIn</a></p>
+    <p><a href="https://github.com/nerochau">GitHub</a></p>
   </section>
+
+  <!-- footer -->
+  <footer>
+    <p>&copy;Copyright 2026 Nero Chau</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
-
-<!-- footer -->
-<footer>
-  <p>&copy;Copyright 2026 Nero chau</p>
-</footer>
 
 </html>
