@@ -47,6 +47,7 @@ from google font
 ## Problem that i need to fix:
 - calling the card, project grid, doesnt really work
 - messy code all over the place
+- why is it so slow to load the photo?
 
 ## TO DO:
 - [X] clear up footer
