@@ -2,6 +2,8 @@
 
 A personal portfolio showcasing work at the intersection of **Computer Science, Mathematics, Data Science and Social Impact**. This site features interactive elements, a project filtering system, and smooth scroll animations.
 
+Check out portfolio here: [Samphasnearyroth (Nero) Chau](https://nerochau.github.io/portfolio-nerochau/)
+
 ## Features
 
 - **Typing Animation:** Dynamic hero section header that introduces key focuses.
