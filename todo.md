@@ -42,6 +42,7 @@ from google font
 - coming up with a design that represents Nero
 - Wireframing the design
 - the padding/margin
+- pushing to terminal, so close to breaking it.
 
 ## Problem that i need to fix:
 - calling the card, project grid, doesnt really work
