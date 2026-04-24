@@ -1,0 +1,16 @@
+[
+  {
+    "type": "carousel",
+    "title": "Travel",
+    "images": [
+      {"url": "photo/cambodia.jpg", "label": "Cambodia"},
+      {"url": "photo/tanzania.jpg", "label": "Tanzania"},
+      {"url": "photo/sa.jpg", "label": "South Africa"}
+      {"url": "photo/sa.jpg", "label": "South Africa"}
+      {"url": "photo/sa.jpg", "label": "South Africa"}
+      {"url": "photo/sa.jpg", "label": "South Africa"}
+    ],
+    "desc": "Exploring global perspectives across 10+ countries.",
+    "tech": "International Experience"
+  }
+]

@@ -13,22 +13,23 @@
 
 <body>
   <header>
-
     <!-- navbar -->
     <nav>
-      <h1>Nero</h1>
+      <h1><a href="#hero">Nero</a></h1>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="components/resume.pdf" target="_blank" class="view-btn">Resume</a>
+        </li>
       </ul>
     </nav>
-
   </header>
 
-  <!-- each section: should have similar padding, margin -->
-  <!-- hero section -->
+  <main>
+      <!-- hero section -->
   <section id="hero">
     <div class="hero-text">
       <h1 id="typing"></h1>
@@ -48,16 +49,20 @@
       My interests lie at the intersection of AI, data, sustainability, and human-centered design. I aim to create systems that are thoughtful, ethical, and impactful.
     </p>
 
-    <h3>Skills:</h3>
-    <ul>
-      <li>Python, AI/ML, WebDev</li>
-      <li>Creativity</li>
-      <li>Problem solving</li>
-    </ul>
+    <h3 class="skills-title">Skills</h3>
+      <div class="skills-container">
+        <span>Python</span>
+        <span>AI/ML</span>
+        <span>WebDev</span>
+        <span>Data Science</span>
+        <span>Creativity</span>
+        <span>Problem Solving</span>
+      </div>
+
   </section>
 
   <!-- project section -->
- <section id="projects">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
 
     <div class="filters">
@@ -67,73 +72,89 @@
         <button onclick="filterProjects('2024')">2024</button>
     </div>
 
-     <div class="project-grid">
-      <div class="project-card" data-year="2026">
-        <img src="photo/project1.jpg" alt="">
-        <h3>Granted</h3>
-        <p>Built an Agent AI in a langGraph framework to support efficiency in grant writing process for small businesses and nonprofits.</p>
-        <p class="tech">Python · LangGraph</p>
-        <a href="https://github.com/nerochau/r-final-project-dsci" target="_blank">View Project →</a>
-      </div>
-
-      <div class="project-card" data-year="2025">
-        <img src="photo/project1.jpg" alt="">
-        <h3>National Exam Analysis</h3>
-        <p>Evaluated whether exam scores predict student success using R.</p>
-        <p class="tech">R · Data Analysis</p>
-        <a href="https://github.com/nerochau/r-final-project-dsci" target="_blank">View Project →</a>
-      </div>
-
-      <div class="project-card" data-year="2025">
-        <img src="photo/project2.jpg" alt="">
-        <h3>Career Matching ML</h3>
-        <p>Predicted job performance using personality traits and ML models.</p>
-        <p class="tech">Python · ML</p>
-        <a href="https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank">View Project →</a>
-      </div>
-
-      <div class="project-card" data-year="2025">
-        <img src="photo/project3.jpg" alt="">
-        <h3>Choosr</h3>
-        <p>Chrome extension to compare products and improve purchasing decisions.</p>
-        <p class="tech">JavaScript · Chrome API</p>
-        <a href="https://github.com/nerochau/choosr" target="_blank">View Project →</a>
-      </div>
+    <div class="project-grid" id="project-container">
+      <p>Loading projects...</p> 
     </div>
 
   </section>
 
-  <!-- HOBBIES -->
-  <section id="hobbies">
-    <h2>Hobbies</h2>
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+      <div class="project-grid">
+        
+        <div class="project-card">
+          <iframe width="auto" height="auto" src="https://www.youtube.com/embed/9URfDISffPY?si=Gsle_7IB4j524YQf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <h3>YouTube</h3>
+          <p>Filming and editing visual stories focused on tech and travel.</p>
+          <a href=" https://www.youtube.com/@nerochau" target="_blank" class="view-btn">View videos →</a>
+        </div>
 
-    <div class="hobby-grid">
-      <div>
-        <h3>YouTube</h3>
-        <p>Filming and editing visual stories.</p>
-        <a href="https://github.com/HassanDataSci/caricon-personality-career-matching" target="_blank">View videos →</a>
+        <div class="project-card">
+          <img src="photo/hot_take.jpg" alt="Entrepreneurship Project" class="hobby-img">
+          <h3>Entrepreneurship</h3>
+          <p>Building "Hot Take," a portable temperature-controlled drinking device.</p>
+          <p class="view-btn">Finalist for InventOR 2026</p>
+        </div>
+
+    <!-- might need to make another json file -->
+        <div class="project-card">
+          <div class="carousel" id="travel-carousel">
+            <div class="carousel-track">
+              <div class="carousel-item">
+                <img src="photo/cambodia.jpg" alt="Cambodia">
+                <span class="country-label">Cambodia</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/japan.JPG" alt="Japan">
+                <span class="country-label">Japan</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/tanzania.jpg" alt="Tanzania">
+                <span class="country-label">Tanzania</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/kenya.jpeg" alt="Kenya">
+                <span class="country-label">Kenya</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/uganda.jpeg" alt="Uganda">
+                <span class="country-label">Uganda</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/southafrica.jpg" alt="South Africa">
+                <span class="country-label">South Africa</span>
+              </div>
+              <div class="carousel-item">
+                <img src="photo/usa.jpg" alt="USA">
+                <span class="country-label">USA</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="carousel-controls">
+              <button class="nav-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+              <button class="nav-btn next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+            <h3>Travel</h3>
+            <p>Exploring global perspectives across 6+ countries.</p>
+            <span class="tech">Global Citizen</span>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div>
-        <h3>Entrepreneurship</h3>
-        <p>Building ideas into real-world projects.</p>
-      </div>
+  <!-- contact section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: cnearyroth@yahoo.com</p>
+      <p><a href="https://www.linkedin.com/in/samphasnearyrothchau">LinkedIn</a></p>
+      <p><a href="https://github.com/nerochau">GitHub</a></p>
+    </section>
 
-      <div> 
-        <!-- add countries + pictures -->
-        <h3>Travel</h3>
-        <p>Exploring cultures and global perspectives.</p>
-      </div>
-    </div>
-  </section>
-
-<!-- contact section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: cnearyroth@yahoo.com</p>
-    <p><a href="https://www.linkedin.com/in/samphasnearyrothchau">LinkedIn</a></p>
-    <p><a href="https://github.com/nerochau">GitHub</a></p>
-  </section>
+  </main>
 
   <!-- footer -->
   <footer>

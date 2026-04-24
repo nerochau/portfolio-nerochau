@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Granted",
+    "year": "2026",
+    "tech": "Python · LangGraph",
+    "desc": "Built an Agent AI in a langGraph framework to support efficiency in grant writing process for small businesses and nonprofits.",
+    "link": "https://github.com/nerochau/r-final-project-dsci",
+    "img": "photo/granted.png"
+  },
+  {
+    "title": "National Exam Analysis",
+    "year": "2025",
+    "tech": "R · Data Analysis",
+    "desc": "Evaluated whether exam scores predict student success using R.",
+    "link": "https://github.com/nerochau/r-final-project-dsci",
+    "img": "photo/r_project.png"
+  },
+  {
+    "title": "Career Matching ML",
+    "year": "2025",
+    "tech": "Python · ML",
+    "desc": "Predicted job performance using personality traits and ML models.",
+    "link": "https://github.com/HassanDataSci/caricon-personality-career-matching",
+    "img": "photo/personality.png"
+  },
+  {
+    "title": "Choosr",
+    "year": "2025",
+    "tech": "JavaScript · Chrome API",
+    "desc": "Chrome extension to compare products and improve purchasing decisions.",
+    "link": "https://github.com/nerochau/choosr",
+    "img": "photo/choosr.png"
+  }
+]
