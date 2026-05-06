@@ -215,6 +215,12 @@ body {
   gap: 1.5rem;
 }
 
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -225,6 +231,7 @@ body {
 
   border: 1px solid grey;
   border-radius: 12px;
+  /* background: #ffffff; */
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
@@ -251,12 +258,92 @@ body {
   border-color: #333;
 }
 
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.2rem;
+  border: 1px solid grey;
+  border-radius: 12px;
+  /* background: #ffffff; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.hobby-card iframe, .hobby-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hobby-card h3 {
+  margin-top: 1rem;
+}
+
+.hobby-card p {
+  flex-grow: 1;
+}
+
+.hobby-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #333;
+}
+
 button {
   border: none;
   background: none;
   margin-right: 1rem;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.saved-messages-section.hidden {
+  display: none;
+}
+
+.saved-messages-section {
+  margin-top: 2rem;
+  padding: 1.4rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.saved-messages-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.message-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.message-card {
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  background: #f9f7ff;
+}
+
+.message-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.message-card p {
+  margin-bottom: 0.5rem;
+}
+
+.message-card small {
+  color: #555;
+  font-size: 0.9rem;
 }
 
 button:hover {
@@ -338,6 +425,73 @@ button:hover {
   font-weight: 600;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-box,
+.saved-messages-section {
+  padding: 1.4rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.contact-box h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-info p,
+.contact-box a {
+  margin-bottom: 0.75rem;
+  color: #0B2D72;
+  word-break: break-word;
+}
+
+.contact-box a {
+  text-decoration: none;
+  color: #0B2D72;
+  transition: color 0.2s ease;
+}
+
+.contact-box a:hover {
+  color: #555;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  background: #ffffff;
+}
+
+.contact-container {
+  padding: 20px 0;
+}
+
+.social-links {
+  margin-top: 30px;
+  text-align: center;
+}
+
 footer {
   padding: 2rem 0;
   text-align: center;
@@ -393,6 +547,23 @@ footer p {
   section {
     margin: 2rem auto;
     padding: 0 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box,
+  .saved-messages-section {
+    padding: 1rem;
+  }
+
+  .hobby-card {
+    padding: 1rem;
+  }
+
+  .hobby-card iframe, .hobby-card img {
+    height: auto;
   }
 }
 

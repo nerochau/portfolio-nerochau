@@ -21,14 +21,15 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
+        <!--<li>
           <a href="components/resume.pdf" target="_blank" class="view-btn">Resume</a>
-        </li>
+        </li>-->
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main> 
+    <!-- change index -->
       <!-- hero section -->
   <section id="hero">
     <div class="hero-text">
@@ -69,7 +70,7 @@
         <button onclick="filterProjects('all')">All</button>
         <button onclick="filterProjects('2026')">2026</button>
         <button onclick="filterProjects('2025')">2025</button>
-        <button onclick="filterProjects('2024')">2024</button>
+        <!-- <button onclick="filterProjects('2024')">2024</button> -->
     </div>
 
     <div class="project-grid" id="project-container">
@@ -78,26 +79,25 @@
 
   </section>
 
-    <section id="hobbies">
-      <h2>Hobbies</h2>
-      <div class="project-grid">
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+      <div class="hobby-grid">
         
-        <div class="project-card">
+        <div class="hobby-card">
           <iframe width="auto" height="auto" src="https://www.youtube.com/embed/9URfDISffPY?si=Gsle_7IB4j524YQf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <h3>YouTube</h3>
           <p>Filming and editing visual stories focused on tech and travel.</p>
           <a href=" https://www.youtube.com/@nerochau" target="_blank" class="view-btn">View videos →</a>
         </div>
 
-        <div class="project-card">
+        <div class="hobby-card">
           <img src="photo/hot_take.jpg" alt="Entrepreneurship Project" class="hobby-img">
           <h3>Entrepreneurship</h3>
           <p>Building "Hot Take," a portable temperature-controlled drinking device.</p>
           <p class="view-btn">Finalist for InventOR 2026</p>
         </div>
 
-    <!-- might need to make another json file -->
-        <div class="project-card">
+        <div class="hobby-card">
           <div class="carousel" id="travel-carousel">
             <div class="carousel-track">
               <div class="carousel-item">
@@ -128,7 +128,6 @@
                 <img src="photo/usa.jpg" alt="USA">
                 <span class="country-label">USA</span>
               </div>
-
             </div>
           </div>
 
@@ -144,15 +143,43 @@
         </div>
 
       </div>
-    </section>
-
   <!-- contact section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: cnearyroth@yahoo.com</p>
-      <p><a href="https://www.linkedin.com/in/samphasnearyrothchau">LinkedIn</a></p>
-      <p><a href="https://github.com/nerochau">GitHub</a></p>
-    </section>
+  <section id="contact">
+    <h2 id="contact-title">Contact</h2>
+    <div class="contact-grid">
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder="Your message..." rows="5" required></textarea>
+        </div>
+        <button type="submit" id="submit-btn" class="view-btn">Send Message</button>
+      </form>
+
+      <aside class="contact-panel">
+        <div class="contact-box">
+          <h3>Contact Info</h3>
+          <p><strong>Email:</strong> cnearyroth@yahoo.com</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/samphasnearyrothchau" target="_blank">samphasnearyrothchau</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/nerochau" target="_blank">nerochau</a></p>
+        </div>
+
+        <div class="saved-messages-section hidden" id="saved-messages-section">
+          <div class="saved-messages-header">
+            <h3>Saved Messages</h3>
+            <button id="clear-messages-btn" class="view-btn">Clear Stored Messages</button>
+          </div>
+          <div id="saved-messages" class="message-list">
+            <p>No saved messages yet.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
   </main>
 
@@ -161,7 +188,7 @@
     <p>&copy;Copyright 2026 Nero Chau</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

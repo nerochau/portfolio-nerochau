@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Fade-in effect logic
+  // Fade-in effect logic
   const elements = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach(el => observer.observe(el));
 
-  // 2. Typing effect logic
+  // Typing effect logic
   const text = "I build technology for social impact.";
   const typingElement = document.getElementById("typing");
   let index = 0;
@@ -25,19 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   typeEffect();
+  loadProjects();
 });
 
-// 3. Filter logic
-
 async function loadProjects() {
+  const container = document.getElementById('project-container');
+  if (!container) return;
+
   try {
     const response = await fetch('projects.json');
-    const data = await response.json();           
-    
-    const container = document.getElementById('project-container');
+    const data = await response.json();
+
+    if (!Array.isArray(data) || data.length === 0) {
+      container.innerHTML = '<p>No projects found.</p>';
+      return;
+    }
+
     container.innerHTML = data.map(project => `
       <div class="project-card fade-in show" data-year="${project.year}">
-        <img src = "${project.img}" alt="${project.title}">
+        <img src="${project.img}" alt="${project.title}">
         <h3>${project.title}</h3>
         <p>${project.desc}</p>
         <p class="tech">${project.tech}</p>
@@ -46,70 +52,138 @@ async function loadProjects() {
     `).join('');
   } catch (error) {
     console.error("Error loading projects:", error);
+    container.innerHTML = '<p>Unable to load projects right now.</p>';
   }
 }
-
-document.addEventListener("DOMContentLoaded", loadProjects);
 
 function filterProjects(year) {
   const cards = document.querySelectorAll(".project-card");
   cards.forEach(card => {
     if (year === "all" || card.dataset.year === year) {
       card.style.display = "flex";
-      card.classList.add("show"); 
+      card.classList.add("show");
     } else {
       card.style.display = "none";
     }
   });
 }
 
-// need to figure out the hobby
-async function loadHobbies() {
-  const response = await fetch('hobbies.json');
-  const data = await response.json();
-  const container = document.getElementById('hobby-container'); // Make sure this ID exists in HTML
-
-  container.innerHTML = data.map(hobby => {
-    if (hobby.type === "carousel") {
-      return `
-        <div class="project-card travel-card">
-          <div class="carousel" id="travel-carousel">
-            <div class="carousel-track">
-              ${hobby.images.map(img => `
-                <div class="carousel-item">
-                  <img src="${img.url}" alt="${img.label}">
-                  <span class="country-label">${img.label}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="carousel-controls">
-              <button class="nav-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
-              <button class="nav-btn next" onclick="moveCarousel(1)">&#10095;</button>
-            </div>
-            <h3>${hobby.title}</h3>
-            <p>${hobby.desc}</p>
-            <span class="tech">${hobby.tech}</span>
-          </div>
-        </div>`;
-    }
-    // You can add more 'if' statements here for YouTube or Entrepreneurship
-  }).join('');
-}
-
-// Call both on load
-document.addEventListener("DOMContentLoaded", () => {
-  loadProjects();
-  loadHobbies();
-});
-
-// Scrolling
 function moveCarousel(direction) {
   const carousel = document.getElementById('travel-carousel');
-  // Scroll by the width of the carousel container
+  if (!carousel) return;
+
   carousel.scrollBy({
     left: carousel.offsetWidth * direction,
     behavior: 'smooth'
   });
 }
+
+function getSavedMessages() {
+  const storageKey = 'portfolio_contact_messages';
+  const stored = localStorage.getItem(storageKey);
+  return stored ? JSON.parse(stored) : [];
+}
+
+function saveMessageLocally(message) {
+  const storageKey = 'portfolio_contact_messages';
+  const messages = getSavedMessages();
+  messages.push({
+    ...message,
+    submittedAt: new Date().toISOString(),
+  });
+  localStorage.setItem(storageKey, JSON.stringify(messages));
+}
+
+function renderSavedMessages() {
+  const container = document.getElementById('saved-messages');
+  if (!container) return;
+
+  const messages = getSavedMessages();
+  if (messages.length === 0) {
+    container.innerHTML = '<p>No saved messages yet.</p>';
+    return;
+  }
+
+  container.innerHTML = messages.map(message => `
+    <div class="message-card">
+      <h4>${message.name}</h4>
+      <p><strong>Email:</strong> ${message.email}</p>
+      <p>${message.message}</p>
+      <small>Saved: ${new Date(message.submittedAt).toLocaleString()}</small>
+    </div>
+  `).join('');
+}
+
+function clearSavedMessages() {
+  localStorage.removeItem('portfolio_contact_messages');
+  renderSavedMessages();
+}
+
+function toggleSavedMessagesSection() {
+  const section = document.getElementById('saved-messages-section');
+  if (!section) return;
+  section.classList.toggle('hidden');
+  if (!section.classList.contains('hidden')) {
+    renderSavedMessages();
+  }
+}
+
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const clearMessagesBtn = document.getElementById('clear-messages-btn');
+const contactTitle = document.getElementById('contact-title');
+
+if (contactTitle) {
+  let secretClicks = 0;
+  contactTitle.addEventListener('click', () => {
+    secretClicks += 1;
+    setTimeout(() => {
+      secretClicks = 0;
+    }, 1000);
+
+    if (secretClicks === 5) {
+      toggleSavedMessagesSection();
+      secretClicks = 0;
+      alert('Admin panel toggled.');
+    }
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'm') {
+    toggleSavedMessagesSection();
+    alert('Admin panel toggled.');
+  }
+});
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    saveMessageLocally(formData);
+    renderSavedMessages();
+
+    alert("Message saved locally. Thank you!");
+    contactForm.reset();
+    submitBtn.innerText = "Send Message";
+    submitBtn.disabled = false;
+  });
+}
+
+if (clearMessagesBtn) {
+  clearMessagesBtn.addEventListener('click', clearSavedMessages);
+}
+
+window.filterProjects = filterProjects;
+window.moveCarousel = moveCarousel;
+
+renderSavedMessages();

@@ -51,8 +51,9 @@ from google font
 
 ## TO DO:
 - [X] clear up footer
+- [ ] need to fix the hero h1, gap too big
 - [ ] make json for travel
 - [ ] clean the code!!!
 - [ ] the navigation bar text is not straight & when i scroll to the top, something weird shows up
-
+- [ ] contact form: add database so people can contact me
 
