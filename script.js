@@ -68,6 +68,7 @@ function filterProjects(year) {
   });
 }
 
+// for pictures
 function moveCarousel(direction) {
   const carousel = document.getElementById('travel-carousel');
   if (!carousel) return;
@@ -78,6 +79,7 @@ function moveCarousel(direction) {
   });
 }
 
+// contact form
 function getSavedMessages() {
   const storageKey = 'portfolio_contact_messages';
   const stored = localStorage.getItem(storageKey);
@@ -172,7 +174,7 @@ if (contactForm) {
     saveMessageLocally(formData);
     renderSavedMessages();
 
-    alert("Message saved locally. Thank you!");
+    alert("Message saved. Thank you!");
     contactForm.reset();
     submitBtn.innerText = "Send Message";
     submitBtn.disabled = false;
